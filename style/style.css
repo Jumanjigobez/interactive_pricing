@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+:root {
+  /* Primary */
+
+  --Soft-Cyan-Full-Slider-Bar: hsl(174, 77%, 80%);
+  --Strong-Cyan-Slider-Backround: hsl(174, 86%, 45%);
+  --Light-Grayish-Red-Discount-Background: hsl(14, 92%, 95%);
+  --Light-Red-Discount-Text: hsl(15, 100%, 70%);
+  --Pale-Blue-CTA-Text: hsl(226, 100%, 87%);
+
+  --White-Pricing-Component-Background: hsl(0, 0%, 100%);
+  --Very-Pale-Blue-Main-Background: hsl(230, 100%, 99%);
+  --Light-Grayish-Blue-Empty-Slider-Bar: hsl(224, 65%, 95%);
+  --Light-Grayish-Blue-Toggle-Background: hsl(223, 50%, 87%);
+  --Grayish-Blue-Text: hsl(225, 20%, 60%);
+  --Dark-Desaturated-Blue-CTA-Background: hsl(227, 35%, 25%);
+
+  --Slider-Truck-Size: 50%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  color: var(--Grayish-Blue-Text);
+}
+
+main {
+  background: var(--Very-Pale-Blue-Main-Background);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-height: 100vh;
+}
+
+/* Header Part */
+#header {
+  background: url("../images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 15vh;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+#header::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 45%;
+  width: 50%;
+  height: 50%;
+  background-image: url("../images/pattern-circles.svg");
+  background-repeat: no-repeat;
+}
+#header h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--Dark-Desaturated-Blue-CTA-Background);
+}
+
+#header p {
+  font-size: 10px;
+}
+
+/* Card Part */
+#card {
+  background: var(--White-Pricing-Component-Background);
+  width: 400px;
+  margin-top: -20vh;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 2px 4px 15px 5px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 2;
+}
+
+#card .part_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#card .part_1 .view_part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#card .part_1 .view_part p {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.1rem;
+}
+
+span.price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--Dark-Desaturated-Blue-CTA-Background);
+}
+span.bill_period {
+  text-transform: lowercase;
+}
+
+#card .part_1 .slider_part {
+  width: 100%;
+}
+.slider_part input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: var(--Light-Grayish-Blue-Empty-Slider-Bar);
+
+  border-radius: 25px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.slider_part input:hover {
+  opacity: 1;
+}
+.slider_part input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -0.7rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--Strong-Cyan-Slider-Backround)
+    url("../images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 45%;
+  background-size: 70%;
+  box-shadow: 2px 5px 15px 5px var(--Soft-Cyan-Full-Slider-Bar);
+  cursor: pointer;
+}
+
+.slider_part input::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--Strong-Cyan-Slider-Backround);
+  box-shadow: 2px 5px 15px 5px var(--Soft-Cyan-Full-Slider-Bar);
+  cursor: pointer;
+}
+
+.slider_part input::-webkit-slider-runnable-track {
+  background: var(--Light-Grayish-Blue-Empty-Slider-Bar);
+  border-radius: 5px;
+  background-image: linear-gradient(
+    var(--Soft-Cyan-Full-Slider-Bar),
+    var(--Soft-Cyan-Full-Slider-Bar)
+  );
+  background-size: var(
+    --Slider-Truck-Size
+  ); /* This will be used to change the background value when thumb is scrolled */
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 8px;
+}
+
+#card .part_1 .billing_part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 10px;
+}
+
+#card .part_1 .billing_part p:nth-child(3) {
+  position: relative;
+}
+
+#card .part_1 .billing_part p:nth-child(3)::after {
+  content: "25% discount";
+  font-size: 8px;
+  color: var(--Light-Red-Discount-Text);
+  font-weight: 800;
+  position: absolute;
+  right: -130%;
+  top: 0;
+  width: 100%;
+  height: 90%;
+  background: var(--Light-Grayish-Red-Discount-Background);
+  padding: 0.1rem;
+  padding-left: 0.4rem;
+  padding-right: 0.1rem;
+  border-radius: 8px;
+}
+
+.billing_part input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  background: var(--Light-Grayish-Blue-Toggle-Background);
+  width: 38px;
+  height: 17px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+.billing_part input[type="checkbox"]:hover {
+  background: var(--Soft-Cyan-Full-Slider-Bar);
+}
+.billing_part input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 14%;
+  left: 8%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--White-Pricing-Component-Background);
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+.billing_part input[type="checkbox"]:checked:after {
+  left: 60%;
+}
+
+/* Part_2 Card Section */
+#card .part_2 {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 10px;
+  width: 100%;
+}
+#card .part_2 .addons_part {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#card .part_2 .addons_part li {
+  list-style-image: url("../images/icon-check.svg");
+}
+.btn {
+  outline: none;
+  border: none;
+  background: var(--Dark-Desaturated-Blue-CTA-Background);
+  color: var(--Grayish-Blue-Text);
+  font-weight: 800;
+  border-radius: 25px;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+  color: var(--White-Pricing-Component-Background);
+}
+
+/* Medium to Small Screen Users */
+@media (max-width: 800px) {
+  #header::before {
+    top: 12%;
+    left: 35%;
+  }
+
+  #card {
+    width: 85%;
+    padding: 1rem;
+    padding-top: 2rem;
+    position: relative;
+  }
+  #card .part_1 {
+    flex-direction: column;
+  }
+  #card .part_1 .view_part {
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+  }
+  #card .part_1 .slider_part {
+    position: absolute;
+    top: 18%;
+    left: 5%;
+  }
+  .slider_part input {
+    width: 90%;
+  }
+  #card .part_1 .billing_part {
+    margin-left: -10%;
+  }
+  #card .part_1 .billing_part p:nth-child(3)::after {
+    content: "25%";
+    right: -80%;
+    width: 40%;
+  }
+  #card .part_2 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+  }
+}

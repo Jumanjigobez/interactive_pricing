@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Interactive Pricing Component | Jumanji</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="script/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header id="header">
+        <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </header>
+
+      <section id="card">
+        <div class="part_1">
+          <div class="view_part">
+            <p><span class="views_count">100</span>k Pageviews</p>
+            <p>
+              <span class="price">$16.00</span>
+              <span class="bill_period">/ month</span>
+            </p>
+          </div>
+
+          <div class="slider_part">
+            <input
+              type="range"
+              name="slider"
+              id="slider"
+              min="1"
+              max="100"
+              value="50"
+            />
+          </div>
+
+          <div class="billing_part">
+            <p>Monthly Billing</p>
+            <input type="checkbox" name="checkbox" id="billType" />
+            <p>Yearly Billing</p>
+          </div>
+        </div>
+
+        <div class="part_2">
+          <ul class="addons_part">
+            <li>Unlimited websites</li>
+            <li>100% data ownership</li>
+            <li>Email reports</li>
+          </ul>
+
+          <div class="button_part">
+            <button class="btn">Start my trial</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
